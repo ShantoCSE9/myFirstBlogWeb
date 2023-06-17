@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-const allBlogsSchema= new mongoose.Schema({
+const draftBlogsSchema= new mongoose.Schema({
     title:{
         type: String,
         required:true
@@ -17,10 +17,6 @@ const allBlogsSchema= new mongoose.Schema({
         type: String,
         required:true
     },
-    desc:{
-        type: String,
-        required:true
-    },
     user:{
        type: mongoose.Types.ObjectId,
        ref:'User',
@@ -33,6 +29,6 @@ const allBlogsSchema= new mongoose.Schema({
 
 })
 
-const allBlogsModel = mongoose.model("Blogs", allBlogsSchema);
+const draftModel = mongoose.model("drafts", draftBlogsSchema);
 
-module.exports =allBlogsModel;
+module.exports=draftModel;

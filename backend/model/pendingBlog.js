@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-const allBlogsSchema= new mongoose.Schema({
+const pendingBlogSchema= new mongoose.Schema({
     title:{
         type: String,
         required:true
@@ -13,11 +13,7 @@ const allBlogsSchema= new mongoose.Schema({
         type: String,
         required:true
     },
-    blogId:{
-        type: String,
-        required:true
-    },
-    desc:{
+    blog:{
         type: String,
         required:true
     },
@@ -33,6 +29,6 @@ const allBlogsSchema= new mongoose.Schema({
 
 })
 
-const allBlogsModel = mongoose.model("Blogs", allBlogsSchema);
+const pendingBlogModel = mongoose.model("pendingBlogs", pendingBlogSchema);
 
-module.exports =allBlogsModel;
+module.exports =pendingBlogModel;
